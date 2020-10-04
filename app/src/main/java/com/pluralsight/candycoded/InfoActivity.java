@@ -24,23 +24,19 @@ public class InfoActivity extends AppCompatActivity {
                 into(candyStoreImageView);
 
 
+
     }
 
     // ***
     // TODO - Task 2 - Launch the Google Maps Activity
     // ***
     public void createMapIntent(View view){
-        view.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Uri addressUri = Uri.parse("geo:0,0?q=618 E South St Orlando, FL 32801");
-                Intent mapIntent= new Intent(Intent.ACTION_VIEW,addressUri);
-                mapIntent.setPackage("com.google.android.apps.maps");
-                if (mapIntent.resolveActivity(getPackageManager()) != null) {
-                    startActivity(mapIntent);
-                }
-            }
-        });
+        Uri addressUri = Uri.parse("geo:0,0?q=618 E South St Orlando, FL 32801");
+        final Intent mapIntent= new Intent(Intent.ACTION_VIEW,addressUri);
+        mapIntent.setPackage("com.google.android.apps.maps");
+        if (mapIntent.resolveActivity(getPackageManager()) != null) {
+            startActivity(mapIntent);
+        }
 
     }
     // ***
